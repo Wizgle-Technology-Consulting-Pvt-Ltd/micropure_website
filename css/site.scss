@@ -1,0 +1,186 @@
+// Navigation Bar
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 75%;
+        height: 100%;
+    }
+    .navbar-collapse.collapsing {
+        left: -75%;
+        transition: height 0s ease;
+    }
+    .navbar-collapse.show {
+        left: 0;
+        transition: left 300ms ease-in-out;
+    }
+    .navbar-toggler.collapsed~.navbar-collapse {
+        transition: left 500ms ease-in-out;
+    }
+}
+
+//Layout
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    width: 100%;
+    opacity: 0.4;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+//Header
+.navbar {
+    padding: 36px 15px !important;
+    .nav-link {
+        color: rgba(0, 0, 0, .5);
+        font-size: 20px !important;
+        margin-left: 37px!important;
+    }
+    .nav-link.btn {
+        height: 50px;
+        min-width: 115px;
+        color: #fff !important;
+        border-radius: 6px;
+        font-size: 18px !important;
+    }
+}
+
+//Hero Banner
+.hero-banner {
+    .image {
+        height: 87vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url('../assests/iconsPics/Home/A_person_in_a_white_lab_coat_walking_away.png');
+        background-size: cover;
+        position: relative;
+        &::before {
+            content: "";
+            height: 100%;
+            width: 60%;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 37%, rgba(255, 255, 255, 0.8799894957983193) 59%, rgba(255, 255, 255, 0) 100%);
+        }
+        h1 {
+            color: #1472ba;
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: -60px 10px 10px 0;
+        }
+        h5 {
+            color: #6b6b6d;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 60px 0 0 0;
+        }
+        .btn {
+            height: 70px;
+            min-width: 230px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            color: #fff !important;
+        }
+    }
+}
+
+.client-scroller {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    position: relative;
+    img {
+        max-height: 65px;
+        margin: 0 40px 20px 0;
+    }
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(90, 90, 90);
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    &::before {
+        content: "";
+        height: 100%;
+        width: 10%;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.8799894957983193) 20%, rgba(255, 255, 255, 0) 100%);
+    }
+    &::after {
+        content: "";
+        height: 100%;
+        width: 10%;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8799894957983193) 80%);
+    }
+}
+
+.sec-heading {
+    text-align: center;
+    h3 {
+        font-size: 40px;
+        line-height: 60px;
+        color: #1472BA;
+        font-weight: 700;
+    }
+    p {
+        font-size: 22px;
+        line-height: 33px;
+        color: #616163;
+    }
+}
+
+.quality {
+    img {
+        width: 54px;
+        margin: 0 0 20px 0;
+    }
+    h5 {
+        font-size: 22px;
+        line-height: 30px;
+        color: #1472BA;
+        padding: 0 0 2px 20px;
+        border-left: 3px solid #1472BA;
+        font-weight: 700;
+    }
+    p {
+        font-size: 18px;
+        line-height: 27px;
+        color: #616163;
+        padding: 0 20px 0 20px;
+    }
+}
