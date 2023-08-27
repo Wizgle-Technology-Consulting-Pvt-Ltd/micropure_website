@@ -964,3 +964,130 @@ body {
   border: 1px solid #1472ba;
   color: #1472ba;
 }
+
+.prod-head h3 {
+  font-weight: 400;
+  text-align: left;
+}
+.prod-head p {
+  text-align: left;
+}
+.prod-head .btn {
+  height: 70px;
+  min-width: 230px;
+  color: #fff !important;
+  border-radius: 6px;
+  font-size: 26px !important;
+  background: #1472ba !important;
+  border: none !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: auto;
+}
+
+.tab-head {
+  -webkit-box-shadow: 3px 4px 18px 0px rgba(0, 0, 0, 0.1019607843);
+          box-shadow: 3px 4px 18px 0px rgba(0, 0, 0, 0.1019607843);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 91px;
+  border-radius: 12px;
+  padding: 30px;
+}
+.tab-head .v1 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
+  color: #B5B5B5;
+  white-space: nowrap;
+}
+.tab-head .v2 {
+  width: 100%;
+}
+.tab-head .v2 ul li a {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  height: 91px;
+  background: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 6px solid transparent;
+  margin: 0 30px 0 0;
+  color: #616163;
+  text-decoration: none;
+}
+.tab-head .v2 li.active a {
+  border-bottom: 6px solid #1472ba;
+  color: #1472ba;
+}
+.tab-head .v3 {
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  color: #1472ba;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tab-head .v3 i {
+  font-size: 30px;
+  margin: 0 0 0 20px;
+}
+
+.tab-content .category a {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  text-align: left;
+  color: #B5B5B5;
+  border-right: 2px solid #B5B5B5;
+  display: block;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.tab-content .category a.active {
+  color: #1472ba;
+  border-right: 2px solid #1472ba;
+}
+.tab-content .item-table h6 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  text-align: left;
+  color: #1472ba;
+}
+.tab-content .item-table table tr td,
+.tab-content .item-table table tr th {
+  padding: 10px 15px;
+  border-bottom: 1px solid #DCDCDC;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  color: #616163;
+}

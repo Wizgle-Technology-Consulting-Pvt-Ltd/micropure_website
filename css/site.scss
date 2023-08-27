@@ -886,3 +886,118 @@ body {
         }
     }
 }
+
+//4. Product List
+.prod-head {
+    h3 {
+        font-weight: 400;
+        text-align: left;
+    }
+    p {
+        text-align: left;
+    }
+    .btn {
+        height: 70px;
+        min-width: 230px;
+        color: #fff !important;
+        border-radius: 6px;
+        font-size: 26px !important;
+        background: #1472ba !important;
+        border: none !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: auto;
+    }
+}
+
+.tab-head {
+    box-shadow: 3px 4px 18px 0px #0000001A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 91px;
+    border-radius: 12px;
+    padding: 30px;
+    .v1 {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 33px;
+        text-align: left;
+        color: #B5B5B5;
+        white-space: nowrap;
+    }
+    .v2 {
+        width: 100%;
+        ul li a {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 33px;
+            height: 91px;
+            background: border-box;
+            display: flex;
+            align-items: center;
+            border-bottom: 6px solid transparent;
+            margin: 0 30px 0 0;
+            color: #616163;
+            text-decoration: none;
+        }
+        li.active a {
+            border-bottom: 6px solid #1472ba;
+            color: #1472ba;
+        }
+    }
+    .v3 {
+        font-family: Poppins;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 33px;
+        color: #1472ba;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        white-space: nowrap;
+        i {
+            font-size: 30px;
+            margin: 0 0 0 20px;
+        }
+    }
+}
+
+.tab-content {
+    .category {
+        a {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 33px;
+            text-align: left;
+            color: #B5B5B5;
+            border-right: 2px solid #B5B5B5;
+            display: block;
+            width: 100%;
+            padding-bottom: 20px;
+            &.active {
+                color: #1472ba;
+                border-right: 2px solid #1472ba;
+            }
+        }
+    }
+    .item-table {
+        h6 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 42px;
+            text-align: left;
+            color: #1472ba;
+        }
+        table tr td,
+        table tr th {
+            padding: 10px 15px;
+            border-bottom: 1px solid #DCDCDC;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 33px;
+            color: #616163;
+        }
+    }
+}
