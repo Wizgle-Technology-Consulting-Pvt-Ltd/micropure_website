@@ -16,7 +16,83 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
 
+<!-- Form Validations -->
+<script>   
+function validateForm(){
+    var Name =
+        document.forms.myForm.name.value;
+    var Email =
+        document.forms.myForm.email.value;
+    var Telephone =
+        document.forms.myForm.phoneNumber.value;
+    var CompanyName =
+        document.forms.myForm.companyName.value;
+    var Message =
+        document.forms.myForm.message.value;
+    var response = grecaptcha.getResponse();
+      
+
+    //Javascript reGex for Email Validation.
+    var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; 
+    // Javascript reGex for Phone Number validation.
+    var regPhone=/^\d{10}$/;                       
+    // Javascript reGex for Name validation
+    var regName = /\d+$/g;                         
+ 
+    if (Name == "" || regName.test(Name)) {
+        window.alert("Please enter your name properly.");
+        name.focus();
+        return false;
+    }
+
+    if (CompanyName == "") {
+        window.alert("Please enter your Company Name.");
+        CompanyName.focus();
+        return false;
+    }
+     
+    if (Email == "" || !regEmail.test(Email)) {
+        window.alert("Please enter a valid e-mail address.");
+        Email.focus();
+        return false;
+    }
+      
+    if (Telephone == "" || !regPhone.test(Telephone)) {
+        alert("Please enter valid phone number.");
+        Telephone.focus();
+        return false;
+    }
+ 
+    if (Message == "") {
+        window.alert("Please enter Message.");
+        Message.focus();
+        return false;
+    }
+
+    if(response.length == 0) 
+    { 
+    //reCaptcha not verified
+    alert("please verify you are humann!"); 
+    evt.preventDefault();
+    return false;
+    }
+    //captcha verified 
+    
+    return true;
+} </script>
+
+
+<!-- <style>
+.error {
+color: red;
+}
+</style> -->
     <title>MicroPure - Contact</title>
 </head>
 
@@ -72,32 +148,56 @@
             <div class="col-5">
                 <div class="left">
 
-                    <form class="mt-5">
-                        <div>
+                    <form id="myForm" class="mt-5 "
+                    method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <div>
                             <i class="fa-light fa-user"></i>
-                            <input type="text" placeholder="Your Name" class="form-control">
+                            <input type="text"  name="name" id="name" placeholder="Your Name" class="form-control" >
+                            <!-- <div  id="nameError"> </div> -->
                         </div>
-                        <div>
+                    </div>
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <div>
                             <i class="fa-light fa-building"></i>
-                            <input type="text" placeholder="Your Company Name" class="form-control">
+                            <input type="text" name="companyName" id="companyName" placeholder="Your Company Name" class="form-control">
+                            <!-- <div  id="companyNameError"> </div> -->
                         </div>
+                    </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
                         <div>
                             <i class="fa-light fa-envelope"></i>
-                            <input type="text" placeholder="Your Email" class="form-control">
+                            <input type="email" name="email" id="email" placeholder="Your Email" class="form-control">
+                            <!-- <div id="emailError"> </div> -->
                         </div>
+                    </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
                         <div>
-                            <i class="fa-light fa-phone"></i>
-                            <input type="text" placeholder="Your Mobile or Landline Number" class="form-control">
+                        <i class="fa-light fa-phone"></i>
+                            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Your Mobile or Landline Number" class="form-control">
                         </div>
+                        <!-- <div id="phoneError">  </div> -->
+                    </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
                         <div>
                             <i class="fa-light fa-pencil"></i>
-                            <textarea type="text" placeholder="Your Message" class="form-control" rows="4" style="height: unset;"></textarea>
+                            <textarea type="text" name="message" id="message" placeholder="Your Message" class="form-control" rows="4" style="height: unset;"></textarea>
+                            </div>
+                            <!-- <div id="messageError"> </div> -->
                         </div>
+                    <div class="g-recaptcha" data-sitekey="6LfnR-InAAAAADqFdwTXh0cQ2GtSYhCUXHcDwKLU"></div>
+                    <br/>
 
-
-                        <button type="submit" class="btn btn-primary btn-xl mt-5">
+                        <button type="submit" id="btn" class="btn btn-primary btn-xl mt-5">
                            Submit <i class="fa-light fa-arrow-right"></i>
                         </button>
+                        
+
                     </form>
                 </div>
             </div>
@@ -203,6 +303,43 @@
 
 
     <!-- Optional JavaScript -->
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+  ></script>
+
+  <script type="text/javascript">      (function () {
+      emailjs.init("JmlYzVZ4JnEs-88Cm");
+    })();
+  </script>
+
+    <script>
+        // listen to the form submission
+        document
+          .getElementById("myForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            if(validateForm()){
+            // validateRecaptcha();
+            const serviceID = "service_bstlt2s";
+            const templateID = "template_2n7flm9";
+           
+            // send the email here
+            emailjs.sendForm(serviceID, templateID, this).then(
+              (response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("SUCCESS!");
+              },
+              
+              (error) => {
+                console.log("FAILED...", error);
+                alert("FAILED...", error);
+              }
+              
+            );}
+    
+          });
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
