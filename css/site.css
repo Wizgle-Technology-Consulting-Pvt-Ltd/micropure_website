@@ -13,7 +13,10 @@ body {
   }
 }
 .navbar {
-  padding: 36px 15px !important;
+  padding: 30px 15px !important;
+}
+.navbar.bg-light {
+  background-color: #fff !important;
 }
 .navbar .nav-item {
   position: relative;
@@ -70,30 +73,66 @@ body {
   color: #77C7FF !important;
 }
 
-@media (max-width: 992px) {
-  .navbar-collapse {
+@media (max-width: 576px) {
+  .navbar .navbar-toggler {
+    border: none;
+    padding-right: 0 !important;
+    outline: none;
+  }
+  .navbar .navbar-collapse {
+    background: #fff;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
     position: fixed;
-    top: 50px;
+    top: 0;
+    left: -80vw;
+    width: 80vw;
+    height: 100vh;
+    -webkit-box-align: self-start;
+        -ms-flex-align: self-start;
+            align-items: self-start;
+    padding: 50px 30px;
+    z-index: 1060;
+    -webkit-transition: ease 0.5s all;
+    transition: ease 0.5s all;
+  }
+  .navbar .navbar-collapse.open {
     left: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    width: 75%;
-    height: 100%;
   }
-  .navbar-collapse.collapsing {
-    left: -75%;
-    -webkit-transition: height 0s ease;
-    transition: height 0s ease;
+  .navbar .navbar-collapse .nav-item .nav-link {
+    color: #616163 !important;
+    margin: 10px 0 0 0 !important;
   }
-  .navbar-collapse.show {
+  .navbar .navbar-collapse .nav-item.active .nav-link {
+    color: #77C7FF !important;
+  }
+  .navbar .navbar-collapse .nav-item.active::before {
+    display: none;
+  }
+  .navbar .navbar-collapse .panel-close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 45px;
+  }
+  .curtain {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
     left: 0;
-    -webkit-transition: left 300ms ease-in-out;
-    transition: left 300ms ease-in-out;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6666666667);
+    z-index: 1040;
+    display: none;
   }
-  .navbar-toggler.collapsed ~ .navbar-collapse {
-    -webkit-transition: left 500ms ease-in-out;
-    transition: left 500ms ease-in-out;
+  .curtain.show {
+    display: block;
   }
 }
 .footer {
@@ -123,11 +162,32 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+@media (max-width: 576px) {
+  .footer .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 10px 0 0 0;
+  }
+  .footer .copy {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 20px 0 10px 0 !important;
+  }
+}
 .overlay {
   position: absolute;
   top: 0;
@@ -454,12 +514,70 @@ body {
   color: #DCDCDC;
   padding: 0 0 0 20px;
 }
+.connect-with .card .item a {
+  color: #fff;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0 0 5px 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
 
+@media (max-width: 576px) {
+  .connect-with .sec-heading {
+    text-align: left;
+  }
+  .connect-with .sec-heading .btn {
+    height: 50px;
+    min-width: 130px;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 6px;
+    color: #fff !important;
+    background-color: #1472ba !important;
+  }
+  .connect-with .card {
+    background: #1472ba;
+    border-radius: 15px;
+  }
+  .connect-with .card h6 {
+    font-size: 22px;
+    line-height: 33px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .connect-with .card .item img {
+    width: 39px;
+    margin: 0 0 15px 25px;
+  }
+  .connect-with .card .item h5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .connect-with .card .item p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
+  .connect-with .card .item a {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
 .hero-about {
+  margin-top: -110px;
+  z-index: -1;
   background-image: url(../assests/hero-about.png);
   background-size: cover;
   min-height: 115vh;
-  margin-top: -50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,13 +598,15 @@ body {
   font-size: 55px;
   line-height: 82px;
   font-weight: 400 !important;
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
+  margin-bottom: 33px !important;
 }
-.hero-about .title h6 {
+.hero-about .title h5 {
   font-size: 22px;
   line-height: 33px;
   font-weight: 400 !important;
+  margin-bottom: 64px !important;
 }
 .hero-about .list .item {
   display: -webkit-box;
@@ -522,6 +642,59 @@ body {
   bottom: 0;
 }
 
+@media (max-width: 1440px) {
+  .hero-about {
+    min-height: 125vh;
+  }
+  .hero-about .title h1 {
+    max-width: 95%;
+  }
+  .hero-about .title h5 {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+  .hero-about .bottom {
+    bottom: -3px;
+  }
+}
+@media (max-width: 576px) {
+  .hero-about {
+    min-height: 992px;
+  }
+  .hero-about .title h1 {
+    max-width: 80%;
+    font-size: 22px;
+    line-height: 33px;
+    margin-bottom: 18px !important;
+  }
+  .hero-about .title h5 {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 18px !important;
+  }
+  .hero-about .bottom {
+    bottom: -3px;
+  }
+  .hero-about .list .item {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hero-about .list .item img {
+    max-width: 40px;
+    margin-right: 10px;
+  }
+  .hero-about .list .item h6 {
+    font-size: 18px;
+    line-height: 33px;
+  }
+  .hero-about .list .item p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
 .mission .card {
   border-left: 18px solid #1472ba;
   -webkit-box-shadow: 3px 4px 21px 0px rgba(0, 0, 0, 0.1607843137);
@@ -530,6 +703,7 @@ body {
 }
 .mission .card img {
   max-width: 148px;
+  margin-bottom: 19px;
 }
 .mission .card h3 {
   font-size: 28px;
@@ -543,6 +717,24 @@ body {
   color: #616163;
 }
 
+@media (max-width: 576px) {
+  .mission .card {
+    border-left: 9px solid #1472ba;
+  }
+  .mission .card img {
+    max-width: 48px;
+    margin-bottom: 16px;
+  }
+  .mission .card h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .mission .card p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #616163;
+  }
+}
 .earth {
   background-color: #1472ba;
   position: relative;
@@ -598,6 +790,19 @@ body {
   font-weight: 700 !important;
 }
 
+@media (max-width: 576px) {
+  .earth .globe {
+    display: none;
+  }
+  .earth .chips .chip {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .earth .chips .text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 .team .item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -635,6 +840,23 @@ body {
   color: #616163;
 }
 
+@media (max-width: 576px) {
+  .team .item img {
+    max-width: 150px !important;
+  }
+  .team .item h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .team .item h6 {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .team .item p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
 .hero-infra {
   background-image: url(../assests/hero-about.png);
   background-size: cover;
@@ -837,6 +1059,7 @@ body {
   line-height: 60px;
   color: #1472ba;
   font-weight: 400;
+  margin-bottom: 33px;
 }
 .contact .title p {
   font-size: 22px;
@@ -858,7 +1081,7 @@ body {
   height: 70px;
   border: 1px solid #B5B5B5;
   border-radius: 5px;
-  margin: 0 0 20px 0;
+  margin: 0 0 24px 0;
   padding: 18px 15px 15px 60px;
   font-size: 20px;
 }
@@ -911,12 +1134,14 @@ body {
   line-height: 42px;
   color: #fff;
   font-weight: 700;
+  margin-bottom: 24px;
 }
 .contact .address .card p {
   font-size: 22px;
   line-height: 33px;
   color: #fff;
   font-weight: 400;
+  margin: 0 !important;
 }
 .contact .address .card.dark {
   background-color: #616163;
@@ -932,6 +1157,7 @@ body {
   line-height: 33px;
   color: #616163;
   font-weight: 400;
+  margin-bottom: 24px !important;
 }
 .contact .actions ul {
   list-style: none;
@@ -1090,4 +1316,16 @@ body {
   font-weight: 400;
   line-height: 33px;
   color: #616163;
+}
+
+@media (max-width: 576px) {
+  .sec-heading h3 {
+    font-size: 22px;
+    line-height: 33px;
+    margin-bottom: 22px;
+  }
+  .sec-heading p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

@@ -22,19 +22,23 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light p-3 change transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 change transparent d-xl-block">
         <div class="container p-0">
             <a class="navbar-brand" href="index.html">
                 <img src="assests/micorpure_logo_white.svg" id="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" onclick="openMobilePanel()">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-            <div class="collapse navbar-collapse  d-flex justify-content-between" id="navbarCollapse">
+            <div class="collapse navbar-collapse d-flex d-lg-flex  justify-content-between" id="navbarCollapse">
                 <ul class="navbar-nav">
-
                 </ul>
                 <ul class="navbar-nav">
+                    <li class="panel-close d-lg-none" onclick="closeMobilePanel()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                          </svg>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link mr-3" href="about.html">About</a>
                     </li>
@@ -48,13 +52,18 @@
                         <a class="nav-link mr-3" href="careers.html">Careers </a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="contact.html">Contact </a>
+                        <a class="nav-link btn btn-primary d-none d-lg-block" href="contact.html">Contact </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3 d-lg-none" href="contact.html">Contact </a>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
+    <div class="curtain">
+    </div>
+
 
     <div class=" hero-about">
         <div class="bottom"></div>
@@ -64,12 +73,12 @@
                     <h1 class="mt-4 text-center">
                         Crafting quality injectables since 1997
                     </h1>
-                    <h6 class="mt-4 text-center">
+                    <h5 class="mt-4 text-center">
                         Experience the evolution of pharma manufacturing with Micropure - where innovation meets quality. Since 1997, we've been providing small volume liquid and dry powder injectables. Our state-of-the-art facilities are certified by WHO GMP guidelines, allowing
                         us to cater to both domestic and export markets. With a focus on productivity, quality and customer satisfaction, Micropure has become a renowned contract manufacturing facility for leading pharmaceutical companies.
-                    </h6>
-                    <div class="row list mt-5 pt-3">
-                        <div class="col-3 item">
+                    </h5>
+                    <div class="row list mt-3 mt-lg-5 pt-3">
+                        <div class="col-6 col-lg-3 item">
                             <img src="assests/iconsPics/About/Icon_ Product portfolio.svg">
                             <div class="">
                                 <h6>
@@ -80,7 +89,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-3 item">
+                        <div class="col-6 col-lg-3 item">
                             <img src="assests/iconsPics/About/Icon_ Happy client.svg">
                             <div class="">
                                 <h6>
@@ -91,7 +100,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-3 item">
+                        <div class="col-6 col-lg-3 item">
                             <img src="assests/iconsPics/About/Icon_ Countries served.svg">
                             <div class="">
                                 <h6>
@@ -102,7 +111,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-3 item">
+                        <div class="col-6 col-lg-3 item">
                             <img src="assests/iconsPics/About/Icon_ Employee strength.svg">
                             <div class="">
                                 <h6>
@@ -120,7 +129,7 @@
 
     </div>
 
-    <div class="container mt-5 mission">
+    <div class="container mt-5 mission pt-5">
         <div class="row">
             <div class="col-12">
                 <div class="sec-heading">
@@ -131,8 +140,8 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-6">
-                <div class="card p-5 px-4">
+            <div class="col-12 col-lg-6">
+                <div class="card px-3 px-lg-5 py-3 py-lg-5">
                     <img src="assests/iconsPics/About/Icon_ Mission.svg">
                     <h3>
                         Mission
@@ -142,8 +151,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card p-5 px-4">
+            <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                <div class="card px-3 px-lg-5 py-3 py-lg-5">
                     <img src="assests/iconsPics/About/Icon_ Vision.svg">
                     <h3>
                         Vision
@@ -159,12 +168,12 @@
         <div class="top"></div>
 
         <div class="container my-5 py-5">
-            <div class="py-5"></div>
+            <div class="py-5 d-none d-lg-block"></div>
             <div class="py-5"></div>
             <div class="py-5"></div>
             <img src="assests/Doted globe 1.svg" class="globe">
             <div class="row justify-content-end">
-                <div class="col-8">
+                <div class="col-12 col-lg-8">
                     <div class="sec-heading">
                         <h3>
                             Expanding Horizons
@@ -219,12 +228,12 @@
                 </div>
             </div>
             <div class="py-5"></div>
-            <div class="py-5"></div>
+            <div class="py-5 d-none d-lg-block"></div>
 
         </div>
     </div>
 
-    <div class="container my-5 py-5">
+    <div class="container my-5 py-5 ">
 
         <div class="row justify-content-end">
             <div class="col-12">
@@ -240,8 +249,8 @@
         </div>
 
         <div class="row team mt-5">
-            <div class="col-4">
-                <div class="item mb-5 px-3 pb-4">
+            <div class="col-12 col-lg-4">
+                <div class="item mb-5 px-3 pb-2">
                     <img src="assests/unsplash_mpDV4xaFP8c.png">
                     <h3 class="mt-4">
                         Kalpana Jain
@@ -254,8 +263,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="item mb-5 px-3 pb-4">
+            <div class="col-12 col-lg-4">
+                <div class="item mb-5 px-3 pb-2">
                     <img src="assests/unsplash_mpDV4xaFP8c.png">
                     <h3 class="mt-4">
                         Sudhir Mehta
@@ -268,8 +277,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="item mb-5 px-3 pb-4">
+            <div class="col-12 col-lg-4">
+                <div class="item mb-5 px-3 pb-2">
                     <img src="assests/unsplash_mpDV4xaFP8c.png">
                     <h3 class="mt-4">
                         Dipti Kothari
@@ -282,8 +291,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="item mb-5 px-3 pb-4">
+            <div class="col-12 col-lg-4">
+                <div class="item mb-5 px-3 pb-2">
                     <img src="assests/unsplash_mpDV4xaFP8c.png">
                     <h3 class="mt-4">
                         Akshay Kothari
@@ -296,8 +305,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="item mb-5 px-3 pb-4">
+            <div class="col-12 col-lg-4">
+                <div class="item mb-5 px-3 pb-2">
                     <img src="assests/unsplash_mpDV4xaFP8c.png">
                     <h3 class="mt-4">
                         Subhi Jain
@@ -310,8 +319,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="item mb-5 px-3 pb-4">
+            <div class="col-12 col-lg-4">
+                <div class="item mb-5 px-3 pb-2">
                     <img src="assests/unsplash_mpDV4xaFP8c.png">
                     <h3 class="mt-4">
                         G. Sushant Kumar
@@ -330,9 +339,9 @@
 
     </div>
 
-    <div class="container mt-5 pt-5 connect-with">
+    <div class="container mt-5 pt-5 connect-with ">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 <div class="sec-heading">
                     <h3>
                         Ready to connect with us?
@@ -340,19 +349,19 @@
                     <p class="mt-3">
                         Partner with us for a seamless pharmaceutical contract manufacturing experience. Our dedicated team is always available to answer your questions and address your concerns.
                     </p>
-                    <button class="btn btn-primary mt-5 py-3 px-4">
+                    <button class="btn btn-primary mt-4 py-3 px-4">
                         Contact Us
                     </button>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card p-4 px-5">
+            <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+                <div class="card p-4 p-lg-4 px-4 px-lg-5">
                     <h6>
                         Discover our products
                     </h6>
 
                     <div class="row mt-3 products">
-                        <div class="col-6 mb-4">
+                        <div class="col-12 col-lg-6 mb-4">
                             <div class="item">
                                 <img src="assests/iconsPics/Icon_ Injectibles.svg">
                                 <h5>
@@ -361,9 +370,10 @@
                                 <p>
                                     Discover our wide range of high-quality injectables, manufactured with precision and attention to detail.
                                 </p>
+                                <a href="">Explore >></a>
                             </div>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-12 col-lg-6 mb-4">
                             <div class="item">
                                 <img src="assests/iconsPics/Icon_ Pre-filled syringes.svg">
                                 <h5>
@@ -372,6 +382,7 @@
                                 <p>
                                     As a fast growing unit dose option, pre-filled syringes enhance healthcare with convenience, safety and cost-effectiveness.
                                 </p>
+                                <a href="">Explore >></a>
                             </div>
                         </div>
                     </div>
@@ -382,30 +393,24 @@
     </div>
 
     <div class="py-5"></div>
-    <div class="footer mt-5 ">
+    <div class="footer mt-5">
         <div class="container py-3">
-            <div class="row align-item-center">
-                <div class="col-4">
-                    <img src="assests/micorpure_logo_white.svg">
-                </div>
-                <div class="col-4 social">
-                    <div class="icon">
-                        <i class="fa-brands fa-twitter"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
+            <div class="row align-item-center justify-content-between">
+                <div class="col-12 col-md-6 logo">
+                    <div class="logo">
+                        <img src="assests/micorpure_logo_white.svg">
 
+                    </div>
                 </div>
-                <div class="col-4 copy">
-                    © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                <div class="col-12 col-md-6 copy">
+                    <div class="copy">
+                        © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <!-- Optional JavaScript -->
