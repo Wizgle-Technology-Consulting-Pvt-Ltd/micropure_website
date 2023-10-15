@@ -1,5 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 @media (min-width: 1200px) {
@@ -228,27 +229,27 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  background: -webkit-gradient(linear, left top, right top, color-stop(37%, rgb(255, 255, 255)), color-stop(59%, rgba(255, 255, 255, 0.8799894958)), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(90deg, rgb(255, 255, 255) 37%, rgba(255, 255, 255, 0.8799894958) 59%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(45%, rgb(255, 255, 255)), color-stop(69%, rgba(255, 255, 255, 0.8799894958)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(90deg, rgb(255, 255, 255) 45%, rgba(255, 255, 255, 0.8799894958) 69%, rgba(255, 255, 255, 0) 100%);
 }
 .hero-banner .image h1 {
   color: #1472ba;
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 82.5px;
   margin: -60px 10px 10px 0;
 }
 .hero-banner .image h5 {
-  color: #6b6b6d;
-  font-size: 28px;
+  color: #616163;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 1.2;
-  margin: 60px 0 0 0;
+  line-height: 38px;
+  margin: 60px 0 46px 0;
 }
 .hero-banner .image .btn {
   height: 70px;
   min-width: 230px;
-  font-size: 24px;
+  font-size: 26px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,6 +264,38 @@ body {
   background-color: #1472ba !important;
 }
 
+@media (max-width: 576px) {
+  .hero-banner {
+    overflow-x: hidden !important;
+  }
+  .hero-banner .img-container {
+    padding: 0 !important;
+  }
+  .hero-banner .image {
+    margin: 20xp !important;
+  }
+  .hero-banner .image::before {
+    display: none;
+  }
+  .hero-banner .image h1 {
+    font-size: 28px;
+    line-height: 42px;
+    margin: 20px !important;
+    color: #fff;
+  }
+  .hero-banner .image h5 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 20px 20px 40px 20px !important;
+    color: #fff;
+  }
+  .hero-banner .image .btn {
+    height: 50px;
+    min-width: 160px;
+    font-size: 16px;
+    margin: 20px !important;
+  }
+}
 .client-scroller {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,47 +306,40 @@ body {
   position: relative;
   padding-bottom: 10px;
 }
-.client-scroller img {
-  max-height: 65px;
-  margin: 0 40px 20px 0;
+.client-scroller .cSwiper .swiper-slide {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
-.client-scroller::-webkit-scrollbar {
-  width: 10px;
-  height: 6px;
+.client-scroller .cSwiper .swiper-slide img {
+  max-width: auto;
+  height: 70px;
 }
-.client-scroller::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0);
-}
-.client-scroller::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0);
-}
-.client-scroller:hover::-webkit-scrollbar-thumb {
-  background: rgb(90, 90, 90);
-}
-.client-scroller:hover::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-}
-.client-scroller::before {
+.client-scroller .swiper-button-prev::before {
   content: "";
-  height: 100%;
-  width: 10%;
+  height: 70px;
+  width: 70px;
   background: #fff;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -15px;
+  top: -10px;
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(255, 255, 255, 0.8799894958)), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.8799894958) 20%, rgba(255, 255, 255, 0) 100%);
 }
-.client-scroller::after {
+.client-scroller .swiper-button-next::before {
   content: "";
-  height: 100%;
-  width: 10%;
+  height: 70px;
+  width: 70px;
   background: #fff;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -15px;
+  top: -10px;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(80%, rgba(255, 255, 255, 0.8799894958)));
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8799894958) 80%);
+}
+.client-scroller .swiper-button-prev::after,
+.client-scroller .swiper-button-next::after {
+  opacity: 0;
 }
 
 .expertise {
@@ -369,20 +395,44 @@ body {
   max-width: 100vw;
   overflow: hidden;
   position: absolute;
-  top: 0;
+  top: -1px;
   z-index: 1;
 }
 .expertise .bottom {
-  border-left: 99vw solid transparent;
+  border-left: 100vw solid transparent;
   border-right: 0 solid transparent;
   border-bottom: 200px solid #fff;
   max-width: 100vw;
   overflow: hidden;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
 }
 
+@media (max-width: 576px) {
+  .expertise .left h5 {
+    font-size: 22px;
+    line-height: 33px;
+  }
+  .expertise .left p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .expertise .card img {
+    max-width: 100px;
+    margin: 0 auto 20px auto;
+  }
+  .expertise .card h6 {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .expertise .card p {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+  }
+}
 .sec-heading {
   text-align: center;
 }
@@ -420,6 +470,20 @@ body {
   padding: 0 20px 0 20px;
 }
 
+@media (max-width: 576px) {
+  .quality img {
+    width: 40px;
+    margin: 0 0 20px 0;
+  }
+  .quality h5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .quality p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
 .triangle-right {
   border-left: 99vw solid transparent;
   border-right: 0 solid transparent;
@@ -432,9 +496,11 @@ body {
 
 .discover {
   background-color: #1472ba;
-  max-height: 900px;
-  overflow: hidden;
   position: relative;
+}
+.discover .columns {
+  max-height: 800px;
+  overflow: hidden;
 }
 .discover .card {
   background: #0e5487;
@@ -466,6 +532,32 @@ body {
   margin: 10px 0 10px 0;
 }
 
+@media (max-width: 576px) {
+  .discover .columns {
+    overflow: auto;
+  }
+  .discover .card {
+    margin-bottom: 15px !important;
+  }
+  .discover .card .head img {
+    height: 70px;
+    width: 70px;
+    margin: 0 10px 0 0;
+    border-radius: 10px;
+  }
+  .discover .card .head h5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .discover .card .head p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .discover .card p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
 .connect-with .sec-heading {
   text-align: left;
 }
@@ -1060,6 +1152,11 @@ body {
   color: #fff;
 }
 
+.areaSwiper .swiper-button-prev,
+.areaSwiper .swiper-button-next {
+  display: none;
+}
+
 @media (max-width: 576px) {
   .area h5 {
     font-size: 22px;
@@ -1145,13 +1242,13 @@ body {
 }
 .inhouse .top {
   border-right: 0 solid transparent;
-  border-left: 99vw solid transparent;
+  border-left: 100vw solid transparent;
   border-top: 200px solid #fff;
   max-width: 100vw;
   overflow: hidden;
   position: absolute;
   left: 0;
-  top: 0;
+  top: -1px;
 }
 .inhouse .sec-heading h3 {
   color: #fff;

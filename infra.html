@@ -187,20 +187,20 @@
                                 </p>
 
                                 <div class="actions d-none d-lg-flex">
-                                    <div class="button" id="sleft">
+                                    <div class="button" id="sleft" onclick="sPrev()">
                                         <i class="fa-solid fa-play"></i>
                                     </div>
-                                    <div class="button" id="sright">
+                                    <div class="button" id="sright" onclick="sNext()">
                                         <i class="fa-solid fa-play"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="actions-m d-lg-none">
-                            <div class="button" id="sleft">
+                            <div class="button" id="sleft" onclick="sPrev()">
                                 <i class="fa-solid fa-play"></i>
                             </div>
-                            <div class="button" id="sright">
+                            <div class="button" id="sright" onclick="sNext()">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </div>
@@ -251,20 +251,20 @@
                                 </p>
 
                                 <div class="actions d-none d-lg-flex">
-                                    <div class="button" id="sleft">
+                                    <div class="button" id="sleft" onclick="sPrev()">
                                         <i class="fa-solid fa-play"></i>
                                     </div>
-                                    <div class="button" id="sright">
+                                    <div class="button" id="sright" onclick="sNext()">
                                         <i class="fa-solid fa-play"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="actions-m d-lg-none">
-                            <div class="button" id="sleft">
+                            <div class="button" id="sleft" onclick="sPrev()">
                                 <i class="fa-solid fa-play"></i>
                             </div>
-                            <div class="button" id="sright">
+                            <div class="button" id="sright" onclick="sNext()">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </div>
@@ -285,16 +285,17 @@
                 },
             });
 
-            // const swiperFunctions = document.querySelector('.areaSwiper').swiper;
+            function sNext() {
+                const swiperFunctions = document.querySelector('.areaSwiper').swiper;
+                swiperFunctions.slideNext();
+            }
 
-            // document.querySelector("#sright").addEventListener('click', function() {
-            //     swiperFunctions.slideNext();
-            // })
-            // document.querySelector("#sleft").addEventListener('click', function() {
-            //     swiperFunctions.slidePrev();
-            // })
+            function sPrev() {
+                const swiperFunctions = document.querySelector('.areaSwiper').swiper;
+                swiperFunctions.slidePrev();
+
+            }
         </script>
-
 
     </div>
 
@@ -383,10 +384,6 @@
                     prevEl: ".swiper-button-prev",
                 },
             });
-
-            document.querySelector("id or class").addEventListener('click', function() {
-                swiper.slideNext()
-            })
         </script>
     </div>
 
