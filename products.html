@@ -22,19 +22,23 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light p-3 ">
+    <nav class="navbar navbar-expand-lg navbar-light  bg-light p-3 change  d-xl-block">
         <div class="container p-0">
             <a class="navbar-brand" href="index.html">
-                <img src="assests/micorpure_logo.svg">
+                <img src="assests/micorpure_logo.svg" id="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" onclick="openMobilePanel()">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-            <div class="collapse navbar-collapse  d-flex justify-content-between" id="navbarCollapse">
+            <div class="collapse navbar-collapse d-flex d-lg-flex  justify-content-between" id="navbarCollapse">
                 <ul class="navbar-nav">
-
                 </ul>
                 <ul class="navbar-nav">
+                    <li class="panel-close d-lg-none" onclick="closeMobilePanel()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                          </svg>
+                    </li>
                     <li class="nav-item ">
                         <a class="nav-link mr-3" href="about.html">About</a>
                     </li>
@@ -44,29 +48,32 @@
                     <li class="nav-item active">
                         <a class="nav-link mr-3" href="products.html">Products </a>
                     </li>
-                    <!-- <li class="nav-item ">
+                    <!-- <li class="nav-item">
                         <a class="nav-link mr-3" href="careers.html">Careers </a>
                     </li> -->
-                    <li class="nav-item ">
-                        <a class="nav-link btn btn-primary" href="contact.html" style="color: #fff !important;">Contact </a>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary d-none d-lg-block" href="contact.html" style="color: #fff !important;">Contact </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link mr-3 " href="contact.html">Contact </a>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
-
+    <div class="curtain">
+    </div>
 
     <div class="container mt-5 pt-5 prod-head">
-        <div class="py-5"></div>
+        <div class="py-5 d-none d-lg-block"></div>
         <div class="row align-item-center">
-            <div class="col-6 sec-heading">
+            <div class="col-12 col-lg-6 sec-heading">
                 <h3>Revolutionizing parenteral manufacturing</h3>
                 <p class="mt-4">Experience high-quality injectable manufacturing solutions tailored to your specific needs. Our state-of-the-art facilities and dedicated team of professionals ensure that our products meet global standards while remaining affordable.
                     Our range of small volume liquid injectables and pre-filled syringes cater to domestic and export markets..</p>
-                <button class="btn btn-primary mt-5">Contact Us</button>
+                <button class="btn btn-primary mt-4 mt-lg-5">Contact Us</button>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6 mt-5 mt-lg-0">
                 <div class="image">
                     <img src="assests/iconsPics/Products/Illustration_ Product.png">
                 </div>
@@ -74,15 +81,15 @@
         </div>
     </div>
 
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 pt-5 d-none d-lg-block">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 tab-head-parent">
                 <div class="tab-head">
                     <div class="v1 px-3">
                         Product List
                     </div>
                     <div class="v2 px-5">
-                        <ul class="nav nav-tabs">
+                        <ul class="nav nav-tabs" id="tabHead">
                             <li class="active"><a data-toggle="tab" href="#menu1">Liquid injectables</a></li>
                             <li><a data-toggle="tab" href="#menu2">Pre-filled syringes</a></li>
                             <li><a data-toggle="tab" href="#menu3">Upcoming releases</a></li>
@@ -100,25 +107,24 @@
 
                         <div class="row">
                             <div class="col-2">
-
                                 <div class="category">
-                                    <a href="" class="active">
+                                    <a href="javascript:void(0)" class="active vials" onclick="smoothScroll(document.getElementById('vials'), '1')">
                                         Vials
                                     </a>
-                                    <a href="">
+                                    <a href="javascript:void(0)" class="ampoules" onclick="smoothScroll(document.getElementById('ampoules'), '2')">
                                         Ampoules
                                     </a>
                                 </div>
                             </div>
                             <div class="col-10">
                                 <div class="item-table">
-                                    <h6 class="mb-3">
+                                    <h6 class="mb-3" id="vials">
                                         Vials (2ml - 50ml)
                                     </h6>
                                     <table>
 
                                         <tr>
-                                            <th>Product name</th>
+                                            <th style="font-weight: 600;">Product name</th>
                                             <th>Strength</th>
                                         </tr>
                                         <tr>
@@ -216,14 +222,14 @@
                                             <td>ONDANSETRON INJECTION IP</td>
                                             <td>2mg/ml</td>
                                         </tr>
-                                        <tr>
+                                        <tr id="ampoules">
 
-                                            <td>Ampoules (1ml - 10ml)</td>
+                                            <td style="font-size: 28px;line-height: 42px; color: #1472BA; font-weight: 600; padding-top: 56px;">Ampoules (1ml - 10ml)</td>
 
                                         </tr>
                                         <tr>
 
-                                            <td>Product name</td>
+                                            <th style="font-weight: 600;">Product name</th>
                                             <td>Strength</td>
                                         </tr>
                                         <tr>
@@ -563,8 +569,7 @@
                                     <table>
 
                                         <tr>
-                                            <td>Pre-filled syringes</td>
-                                            <td>Product name</td>
+                                            <th style="font-weight: 600;">Product name</th>
                                             <td>Strength</td>
                                         </tr>
                                         <tr>
@@ -639,29 +644,21 @@
     <div class="py-5"></div>
     <div class="footer mt-5">
         <div class="container py-3">
-            <div class="row align-item-center">
-                <div class="col-4">
-                    <img src="assests/micorpure_logo_white.svg">
-                </div>
-                <div class="col-4 social">
-                    <div class="icon">
-                        <i class="fa-brands fa-twitter"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
+            <div class="row align-item-center justify-content-between">
+                <div class="col-12 col-md-6 logo">
+                    <div class="logo">
+                        <img src="assests/micorpure_logo_white.svg">
 
+                    </div>
                 </div>
-                <div class="col-4 copy">
-                    © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                <div class="col-12 col-md-6 copy">
+                    <div class="copy">
+                        © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -672,6 +669,76 @@
     <script src="main.js" crossorigin="anonymous"></script>
 
 
+    <script>
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            //>=, not <=
+            if (scroll >= 1020) {
+                //clearHeader, not clearheader - caps H
+                $(".tab-head-parent").addClass("sticky");
+                $(".category").addClass("sticky");
+
+            } else {
+                $(".tab-head-parent").removeClass("sticky");
+                $(".category").removeClass("sticky");
+            }
+        }); //missing );
+
+
+
+        window.smoothScroll = function(target, item) {
+            debugger
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+
+            scroll = function(c, a, b, i) {
+                    i++;
+                    if (i > 30) return;
+                    c.scrollTop = a + (b - a) / 30 * i;
+                    setTimeout(function() {
+                        scroll(c, a, b, i);
+                    }, 20);
+                }
+                // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+
+            debugger;
+            $(".vials").removeClass("active");
+            $(".ampoules").removeClass("active");
+
+            if (item == '1') {
+                $(".vials").addClass("active");
+            } else {
+                $(".ampoules").addClass("active");
+            }
+        }
+
+        const listItems = document.querySelectorAll("#tabHead li");
+
+        // Add a click event listener to each li element
+        listItems.forEach((item) => {
+            item.addEventListener("click", function() {
+                // Remove the "active" class from all li elements
+                listItems.forEach((li) => {
+                    li.classList.remove("active");
+                });
+
+                // Add the "active" class to the clicked li element
+                this.classList.add("active");
+            });
+        });
+    </script>
 
 </body>
 
