@@ -861,7 +861,7 @@ body {
   background-image: url(../assests/hero-about.png);
   background-size: cover;
   min-height: 120vh;
-  margin-top: -50px;
+  margin-top: -110px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -877,6 +877,7 @@ body {
           justify-content: flex-end;
   color: #fff;
   position: relative;
+  z-index: -1;
 }
 .hero-infra .title h1 {
   font-size: 55px;
@@ -884,7 +885,7 @@ body {
   font-weight: 400 !important;
   margin: 0 auto;
 }
-.hero-infra .title h6 {
+.hero-infra .title h5 {
   font-size: 22px;
   line-height: 33px;
   font-weight: 400 !important;
@@ -942,8 +943,34 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 576px) {
+  .hero-infra {
+    min-height: 640px !important;
+  }
+  .hero-infra .title h1 {
+    max-width: 80%;
+    font-size: 22px;
+    line-height: 33px;
+    margin-bottom: 18px !important;
+  }
+  .hero-infra .title h5 {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 18px !important;
+  }
+  .hero-infra .video video {
+    height: 200px;
+  }
+  .hero-infra .video .buttons div {
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+  }
+}
 .area h5 {
-  font-size: 55px;
+  font-size: 50px;
   line-height: 82px;
   color: #1472ba;
   padding: 0 0 2px 20px;
@@ -1033,9 +1060,88 @@ body {
   color: #fff;
 }
 
+@media (max-width: 576px) {
+  .area h5 {
+    font-size: 22px;
+    line-height: 33px;
+    border-left: 3px solid #1472ba;
+    margin-bottom: 5px !important;
+  }
+  .area p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .area .image-box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .area .image-box .image {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  .area .image-box .content {
+    margin-left: 0 !important;
+    width: 100%;
+    margin-top: -80px;
+  }
+  .area .image-box .content h1 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .area .image-box .content p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 0;
+  }
+  .area .actions-m {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .area .actions-m .button {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #1472ba;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .area .actions-m .button i {
+    font-size: 16px;
+    color: #1472ba;
+  }
+  .area .actions-m .button:first-child {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .area .actions-m .button:hover {
+    border: 1px solid #1472ba;
+  }
+  .area .actions-m .button:hover i {
+    color: #1472ba;
+  }
+}
 .inhouse {
   background-color: #1472ba;
   position: relative;
+  padding-bottom: 50px;
 }
 .inhouse .top {
   border-right: 0 solid transparent;
@@ -1053,7 +1159,78 @@ body {
 .inhouse .sec-heading p {
   color: #fff;
 }
+.inhouse .labSwiper {
+  padding-bottom: 70px;
+}
+.inhouse .labSwiper .swiper-slide img {
+  border: 22px solid #0E5487;
+  border-radius: 30px;
+  height: 560px;
+  margin: 0 30px 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.inhouse .labSwiper .swiper-button-next:after,
+.inhouse .labSwiper .swiper-button-prev:after {
+  display: none;
+}
+.inhouse .labSwiper .swiper-button-prev {
+  left: calc(50vw - 50px);
+  top: 96% !important;
+  background-image: url("../assests/vl.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  background-position-y: center;
+}
+.inhouse .labSwiper .swiper-button-next {
+  right: calc(50vw - 50px);
+  top: 96% !important;
+  background-image: url("../assests/vr.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  background-position-y: center;
+}
 
+@media (max-width: 576px) {
+  .inhouse .container {
+    margin-top: 120px !important;
+  }
+  .inhouse .labSwiper {
+    padding-bottom: 70px;
+  }
+  .inhouse .labSwiper .swiper-slide {
+    padding: 10px;
+  }
+  .inhouse .labSwiper .swiper-slide img {
+    border: 11px solid #0E5487;
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .inhouse .labSwiper .swiper-button-prev {
+    width: 20px;
+    height: 20px;
+    right: calc(50vw - 20px);
+  }
+  .inhouse .labSwiper .swiper-button-next {
+    width: 20px;
+    height: 20px;
+    right: calc(50vw - 20px);
+  }
+}
 .contact .title h1 {
   font-size: 40px;
   line-height: 60px;
