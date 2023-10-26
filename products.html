@@ -64,8 +64,7 @@
     <div class="curtain">
     </div>
 
-    <div class="container mt-5 pt-5 prod-head">
-        <div class="py-5 d-none d-lg-block"></div>
+    <div class="container prod-head sec-spacing1">
         <div class="row align-item-center">
             <div class="col-12 col-lg-6 sec-heading">
                 <h3>Revolutionizing parenteral manufacturing</h3>
@@ -81,14 +80,14 @@
         </div>
     </div>
 
-    <div class="container mt-5 pt-5 d-none d-lg-block">
+    <div class="container sec-spacing1 d-none d-lg-block">
         <div class="row">
             <div class="col-12 tab-head-parent">
-                <div class="tab-head">
-                    <div class="v1 px-3">
+                <div class="tab-head p-3">
+                    <div class="v1 px-4">
                         Product List
                     </div>
-                    <div class="v2 px-5">
+                    <div class="v2 px-4">
                         <ul class="nav nav-tabs" id="tabHead">
                             <li class="active"><a data-toggle="tab" href="#menu1">Liquid injectables</a></li>
                             <li><a data-toggle="tab" href="#menu2">Pre-filled syringes</a></li>
@@ -124,8 +123,8 @@
                                     <table>
 
                                         <tr>
-                                            <th style="font-weight: 600;">Product name</th>
-                                            <th>Strength</th>
+                                            <th style="font-weight: 600; border-bottom: 1px solid #B5B5B5;">Product name</th>
+                                            <th style="font-weight: 600; border-bottom: 1px solid #B5B5B5;">Strength</th>
                                         </tr>
                                         <tr>
 
@@ -224,13 +223,13 @@
                                         </tr>
                                         <tr id="ampoules">
 
-                                            <td style="font-size: 28px;line-height: 42px; color: #1472BA; font-weight: 600; padding-top: 56px;">Ampoules (1ml - 10ml)</td>
+                                            <td style="font-size: 28px;line-height: 42px; color: #1472BA; font-weight: 600; padding-top: 56px; border: none;">Ampoules (1ml - 10ml)</td>
 
                                         </tr>
                                         <tr>
 
-                                            <th style="font-weight: 600;">Product name</th>
-                                            <td>Strength</td>
+                                            <th style="font-weight: 600; border-bottom: 1px solid #B5B5B5;">Product name</th>
+                                            <td style="font-weight: 600; border-bottom: 1px solid #B5B5B5;">Strength</td>
                                         </tr>
                                         <tr>
 
@@ -537,12 +536,11 @@
 
 
                                         </tr>
-                                        <tr>
 
-                                            <td>If you can&#39;t find the product you&#39;re looking for? Let us know and we&#39;ll bring it to life.</td>
-
-                                        </tr>
                                     </table>
+                                    <p class="let-us my-5">
+                                        If you can&#39;t find the product you&#39;re looking for? <a href="/contact.html">Let us know</a> and we&#39;ll bring it to life.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -569,8 +567,8 @@
                                     <table>
 
                                         <tr>
-                                            <th style="font-weight: 600;">Product name</th>
-                                            <td>Strength</td>
+                                            <th style="font-weight: 600; border-bottom: 1px solid #B5B5B5;">Product name</th>
+                                            <td style="font-weight: 600; border-bottom: 1px solid #B5B5B5;">Strength</td>
                                         </tr>
                                         <tr>
 
@@ -639,8 +637,6 @@
         </div>
     </div>
 
-
-
     <div class="py-5"></div>
     <div class="footer mt-5">
         <div class="container py-3">
@@ -688,7 +684,6 @@
 
 
         window.smoothScroll = function(target, item) {
-            debugger
             var scrollContainer = target;
             do { //find scroll container
                 scrollContainer = scrollContainer.parentNode;
@@ -713,7 +708,6 @@
                 // start scrolling
             scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 
-            debugger;
             $(".vials").removeClass("active");
             $(".ampoules").removeClass("active");
 

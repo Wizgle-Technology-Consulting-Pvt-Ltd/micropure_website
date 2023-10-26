@@ -4,6 +4,10 @@ body {
     overflow-x: hidden;
 }
 
+.sec-spacing1 {
+    margin-top: 150px;
+}
+
 @media (min-width: 1200px) {
     .container {
         max-width: 95%;
@@ -664,17 +668,16 @@ body {
 
 //2. About Page
 .hero-about {
-    margin-top: -110px;
+    margin-top: -120px;
     z-index: -1;
     background-image: url(../assests/hero-about.png);
     background-size: cover;
-    min-height: 115vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     color: #fff;
     position: relative;
+    padding-top: 150px;
     .title {
         h1 {
             font-size: 55px;
@@ -696,11 +699,11 @@ body {
             display: flex;
             align-items: center;
             img {
-                max-width: 88px;
+                max-width: 66px;
                 margin-right: 10px;
             }
             h6 {
-                font-size: 55px;
+                font-size: 44px;
                 line-height: 70px;
                 font-weight: 400 !important;
                 margin-bottom: 5px;
@@ -956,11 +959,10 @@ body {
     background-image: url(../assests/hero-about.png);
     background-size: cover;
     min-height: 120vh;
-    margin-top: -225px;
+    margin-top: -120px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+    padding-top: 150px;
     color: #fff;
     position: relative;
     z-index: -1;
@@ -1113,7 +1115,7 @@ body {
                     margin: 0 10px;
                     cursor: pointer;
                     i {
-                        font-size: 20px;
+                        font-size: 25px;
                         color: #DCDCDC;
                     }
                     &:first-child {
@@ -1121,8 +1123,9 @@ body {
                     }
                     &:hover {
                         border: 1px solid #fff;
+                        background: #fff;
                         i {
-                            color: #fff;
+                            color: #77c7ff;
                         }
                     }
                 }
@@ -1518,7 +1521,31 @@ body {
         white-space: nowrap;
     }
     .v2 {
-        width: 100%;
+        position: relative;
+        &::before {
+            content: "";
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            background-color: #b5b5b5;
+            width: 3px;
+            height: 30px;
+            left: -8%;
+            top: 30px;
+            position: absolute;
+        }
+        &::after {
+            content: "";
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            background-color: #b5b5b5;
+            width: 3px;
+            height: 30px;
+            right: -10%;
+            top: 30px;
+            position: absolute;
+        }
         ul li a {
             font-size: 22px;
             font-weight: 400;
@@ -1567,6 +1594,7 @@ body {
             display: block;
             width: 100%;
             padding-bottom: 20px;
+            text-decoration: none;
             &.active {
                 color: #1472ba;
                 border-right: 2px solid #1472ba;
@@ -1599,6 +1627,44 @@ body {
             line-height: 33px;
             color: #616163;
         }
+    }
+    .let-us {
+        font-size: 22px;
+        line-height: 33px;
+        color: #616163;
+        a {
+            color: #0044CC;
+            text-decoration: underline;
+        }
+    }
+}
+
+// General Responsive
+@media (max-width: 1440px) {
+    .tab-head-parent {
+        &.sticky {
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 2.5%;
+            max-width: 95%;
+            z-index: 1040;
+        }
+    }
+    .tab-head {
+        .v2 {
+            &::before {
+                left: -2%;
+                top: 30px;
+            }
+            &::after {
+                right: -3%;
+                top: 30px;
+            }
+        }
+    }
+    .tab-content .category.sticky {
+        left: 11px;
     }
 }
 

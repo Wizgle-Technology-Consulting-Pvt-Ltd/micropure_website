@@ -3,6 +3,10 @@ body {
   overflow-x: hidden;
 }
 
+.sec-spacing1 {
+  margin-top: 150px;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 95%;
@@ -681,11 +685,11 @@ body {
   }
 }
 .hero-about {
-  margin-top: -110px;
+  margin-top: -120px;
   z-index: -1;
   background-image: url(../assests/hero-about.png);
   background-size: cover;
-  min-height: 115vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -693,14 +697,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   color: #fff;
   position: relative;
+  padding-top: 150px;
 }
 .hero-about .title h1 {
   font-size: 55px;
@@ -725,11 +724,11 @@ body {
           align-items: center;
 }
 .hero-about .list .item img {
-  max-width: 88px;
+  max-width: 66px;
   margin-right: 10px;
 }
 .hero-about .list .item h6 {
-  font-size: 55px;
+  font-size: 44px;
   line-height: 70px;
   font-weight: 400 !important;
   margin-bottom: 5px;
@@ -969,7 +968,7 @@ body {
   background-image: url(../assests/hero-about.png);
   background-size: cover;
   min-height: 120vh;
-  margin-top: -225px;
+  margin-top: -120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -977,12 +976,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  padding-top: 150px;
   color: #fff;
   position: relative;
   z-index: -1;
@@ -1155,7 +1149,7 @@ body {
   cursor: pointer;
 }
 .area .image-box .content .actions .button i {
-  font-size: 20px;
+  font-size: 25px;
   color: #DCDCDC;
 }
 .area .image-box .content .actions .button:first-child {
@@ -1164,9 +1158,10 @@ body {
 }
 .area .image-box .content .actions .button:hover {
   border: 1px solid #fff;
+  background: #fff;
 }
 .area .image-box .content .actions .button:hover i {
-  color: #fff;
+  color: #77c7ff;
 }
 
 .areaSwiper .swiper-button-prev,
@@ -1566,7 +1561,31 @@ body {
   white-space: nowrap;
 }
 .tab-head .v2 {
-  width: 100%;
+  position: relative;
+}
+.tab-head .v2::before {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #b5b5b5;
+  width: 3px;
+  height: 30px;
+  left: -8%;
+  top: 30px;
+  position: absolute;
+}
+.tab-head .v2::after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #b5b5b5;
+  width: 3px;
+  height: 30px;
+  right: -10%;
+  top: 30px;
+  position: absolute;
 }
 .tab-head .v2 ul li a {
   font-size: 22px;
@@ -1622,6 +1641,7 @@ body {
   display: block;
   width: 100%;
   padding-bottom: 20px;
+  text-decoration: none;
 }
 .tab-content .category a.active {
   color: #1472ba;
@@ -1652,7 +1672,37 @@ body {
   line-height: 33px;
   color: #616163;
 }
+.tab-content .let-us {
+  font-size: 22px;
+  line-height: 33px;
+  color: #616163;
+}
+.tab-content .let-us a {
+  color: #0044CC;
+  text-decoration: underline;
+}
 
+@media (max-width: 1440px) {
+  .tab-head-parent.sticky {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 2.5%;
+    max-width: 95%;
+    z-index: 1040;
+  }
+  .tab-head .v2::before {
+    left: -2%;
+    top: 30px;
+  }
+  .tab-head .v2::after {
+    right: -3%;
+    top: 30px;
+  }
+  .tab-content .category.sticky {
+    left: 11px;
+  }
+}
 @media (max-width: 576px) {
   .sec-heading h3 {
     font-size: 22px;
