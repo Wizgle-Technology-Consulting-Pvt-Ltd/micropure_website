@@ -26,7 +26,6 @@ body {
   content: "";
   height: 50px;
   width: 3px;
-  background: #1472ba;
   position: absolute;
   top: -50px;
   left: 55%;
@@ -56,6 +55,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 10px;
+}
+.navbar .nav-link.btn:hover {
+  background-color: #77c7ff !important;
+  border-color: #77c7ff !important;
 }
 .navbar.transparent {
   background: transparent !important;
@@ -262,6 +266,10 @@ body {
   border-radius: 6px;
   color: #fff !important;
   background-color: #1472ba !important;
+}
+.hero-banner .image .btn:hover {
+  background-color: #77c7ff !important;
+  border-color: #77c7ff !important;
 }
 
 @media (max-width: 576px) {
@@ -578,6 +586,10 @@ body {
   color: #fff !important;
   background-color: #1472ba !important;
 }
+.connect-with .sec-heading .btn:hover {
+  background-color: #77c7ff !important;
+  border-color: #77c7ff !important;
+}
 .connect-with .card {
   background: #1472ba;
   border-radius: 15px;
@@ -635,6 +647,10 @@ body {
     border-radius: 6px;
     color: #fff !important;
     background-color: #1472ba !important;
+  }
+  .connect-with .sec-heading .btn:hover {
+    background-color: #77c7ff !important;
+    border-color: #77c7ff !important;
   }
   .connect-with .card {
     background: #1472ba;
@@ -953,7 +969,7 @@ body {
   background-image: url(../assests/hero-about.png);
   background-size: cover;
   min-height: 120vh;
-  margin-top: -110px;
+  margin-top: -225px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1038,6 +1054,7 @@ body {
 @media (max-width: 576px) {
   .hero-infra {
     min-height: 640px !important;
+    margin-top: -100px;
   }
   .hero-infra .title h1 {
     max-width: 80%;
@@ -1294,6 +1311,11 @@ body {
   background-position-y: center;
 }
 
+@media (max-width: 1440px) {
+  .inhouse .labSwiper .swiper-slide img {
+    height: 450px;
+  }
+}
 @media (max-width: 576px) {
   .inhouse .container {
     margin-top: 120px !important;
@@ -1395,6 +1417,10 @@ body {
   align-items: center;
   margin-left: auto;
 }
+.contact .left form .btn:hover {
+  background-color: #77c7ff !important;
+  border-color: #77c7ff !important;
+}
 .contact .left form .btn i {
   font-size: 33px;
   margin: 0 0 0 20px;
@@ -1415,7 +1441,7 @@ body {
   line-height: 33px;
   color: #fff;
   font-weight: 400;
-  margin: 0 !important;
+  margin: 0 0 40px 0 !important;
 }
 .contact .address .card.dark {
   background-color: #616163;
@@ -1490,6 +1516,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-right: auto;
+}
+.prod-head .btn:hover {
+  background-color: #77c7ff !important;
+  border-color: #77c7ff !important;
 }
 .prod-head .image img {
   max-width: 100%;

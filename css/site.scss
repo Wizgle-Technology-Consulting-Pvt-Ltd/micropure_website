@@ -27,7 +27,7 @@ body {
             content: "";
             height: 50px;
             width: 3px;
-            background: #1472ba;
+            // background: #1472ba;
             position: absolute;
             top: -50px;
             left: 55%;
@@ -52,6 +52,11 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 10px;
+        &:hover {
+            background-color: #77c7ff !important;
+            border-color: #77c7ff !important;
+        }
     }
     &.transparent {
         background: transparent !important;
@@ -232,6 +237,10 @@ body {
             border-radius: 6px;
             color: #fff !important;
             background-color: #1472ba !important;
+            &:hover {
+                background-color: #77c7ff !important;
+                border-color: #77c7ff !important;
+            }
         }
     }
 }
@@ -555,6 +564,10 @@ body {
             border-radius: 6px;
             color: #fff !important;
             background-color: #1472ba !important;
+            &:hover {
+                background-color: #77c7ff !important;
+                border-color: #77c7ff !important;
+            }
         }
     }
     .card {
@@ -611,6 +624,10 @@ body {
                 border-radius: 6px;
                 color: #fff !important;
                 background-color: #1472ba !important;
+                &:hover {
+                    background-color: #77c7ff !important;
+                    border-color: #77c7ff !important;
+                }
             }
         }
         .card {
@@ -939,7 +956,7 @@ body {
     background-image: url(../assests/hero-about.png);
     background-size: cover;
     min-height: 120vh;
-    margin-top: -110px;
+    margin-top: -225px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1007,6 +1024,7 @@ body {
 @media (max-width: 576px) {
     .hero-infra {
         min-height: 640px !important;
+        margin-top: -100px;
         .title {
             h1 {
                 max-width: 80%;
@@ -1246,6 +1264,18 @@ body {
     }
 }
 
+@media (max-width: 1440px) {
+    .inhouse {
+        .labSwiper {
+            .swiper-slide {
+                img {
+                    height: 450px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 576px) {
     .inhouse {
         .container {
@@ -1345,6 +1375,10 @@ body {
                 -ms-flex-align: center;
                 align-items: center;
                 margin-left: auto;
+                &:hover {
+                    background-color: #77c7ff !important;
+                    border-color: #77c7ff !important;
+                }
                 i {
                     font-size: 33px;
                     margin: 0 0 0 20px;
@@ -1368,7 +1402,7 @@ body {
                 line-height: 33px;
                 color: #fff;
                 font-weight: 400;
-                margin: 0 !important;
+                margin: 0 0 40px 0 !important;
             }
             &.dark {
                 background-color: #616163;
@@ -1434,6 +1468,10 @@ body {
         justify-content: center;
         align-items: center;
         margin-right: auto;
+        &:hover {
+            background-color: #77c7ff !important;
+            border-color: #77c7ff !important;
+        }
     }
     .image {
         img {
