@@ -1642,6 +1642,7 @@ body {
   width: 100%;
   padding-bottom: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 .tab-content .category a.active {
   color: #1472ba;
@@ -1701,6 +1702,64 @@ body {
   }
   .tab-content .category.sticky {
     left: 11px;
+  }
+}
+@media (max-width: 576px) {
+  .tab-head-parent {
+    padding: 0 !important;
+  }
+  .tab-head-parent.sticky {
+    top: 0;
+    left: 0;
+    max-width: 100%;
+  }
+  .tab-head {
+    overflow-x: scroll;
+    white-space: nowrap;
+    border-radius: 0 !important;
+    height: 70px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-bottom: 2px solid #B5B5B5;
+  }
+  .tab-head .v2::before {
+    display: none;
+  }
+  .tab-head .v2::after {
+    display: none;
+  }
+  .tab-head .v2 ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .tab-head .v2 ul li a {
+    font-size: 16px;
+    line-height: 24px;
+    height: 70px;
+  }
+  .tab-head .v3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .tab-head .v3 i {
+    font-size: 20px;
+    margin: 0 0 0 20px;
+  }
+  .tab-content .item-table h6 {
+    font-size: 22px;
+    line-height: 33px;
+  }
+  .tab-content .item-table table tr td,
+  .tab-content .item-table table tr th {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .tab-content .let-us {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 @media (max-width: 576px) {
