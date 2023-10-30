@@ -1076,7 +1076,7 @@ body {
         display: flex;
         align-items: center;
         .image {
-            width: 75%;
+            width: 900px;
             img {
                 width: 100%;
                 height: auto;
@@ -1086,24 +1086,47 @@ body {
         .content {
             border-radius: 20px;
             background: #1472bacc;
-            margin-left: -10%;
+            margin-left: -20%;
+            height: 420px;
+            z-index: 2;
+            padding: 90px !important;
             h1 {
                 font-size: 40px;
                 line-height: 60px;
                 color: #fff;
-                font-weight: 700;
+                font-weight: 600;
+                margin-bottom: 32px;
             }
             p {
-                font-size: 28px;
+                font-size: 24px;
                 line-height: 42px;
                 color: #fff;
                 font-weight: 400;
                 padding: 0 !important;
+                margin-bottom: 32px;
             }
             .actions {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                .ap {
+                    display: flex;
+                    align-items: center;
+                    .unit {
+                        font-size: 22px;
+                        line-height: 33px;
+                        font-weight: 500;
+                        color: #fff;
+                        margin: 0 24px;
+                    }
+                    .ut1,
+                    .ut2 {
+                        opacity: 0;
+                        &.show {
+                            opacity: 1;
+                        }
+                    }
+                }
                 .button {
                     height: 55px;
                     width: 55px;
@@ -1118,7 +1141,7 @@ body {
                         font-size: 25px;
                         color: #DCDCDC;
                     }
-                    &:first-child {
+                    &.rotate {
                         transform: rotate(180deg);
                     }
                     &:hover {
@@ -1130,11 +1153,18 @@ body {
                     }
                 }
             }
+            .u1,
+            .u2 {
+                display: none;
+                &.show {
+                    display: block;
+                }
+            }
         }
     }
 }
 
-.areaSwiper {
+.areaSwipern {
     .swiper-button-prev,
     .swiper-button-next {
         display: none;
@@ -1158,7 +1188,7 @@ body {
             .image {
                 width: 100%;
                 max-width: 100%;
-                min-width: 100%
+                min-width: 100%;
             }
             .content {
                 margin-left: 0 !important;
@@ -1684,8 +1714,7 @@ body {
         white-space: nowrap;
         border-radius: 0 !important;
         height: 70px;
-        box-shadow: none;
-        border-bottom: 2px solid #B5B5B5;
+        box-shadow: 0 4px 12px #eee;
         .v2 {
             &::before {
                 display: none;

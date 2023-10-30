@@ -1095,7 +1095,7 @@ body {
           align-items: center;
 }
 .area .image-box .image {
-  width: 75%;
+  width: 900px;
 }
 .area .image-box .image img {
   width: 100%;
@@ -1105,20 +1105,25 @@ body {
 .area .image-box .content {
   border-radius: 20px;
   background: rgba(20, 114, 186, 0.8);
-  margin-left: -10%;
+  margin-left: -20%;
+  height: 420px;
+  z-index: 2;
+  padding: 90px !important;
 }
 .area .image-box .content h1 {
   font-size: 40px;
   line-height: 60px;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
+  margin-bottom: 32px;
 }
 .area .image-box .content p {
-  font-size: 28px;
+  font-size: 24px;
   line-height: 42px;
   color: #fff;
   font-weight: 400;
   padding: 0 !important;
+  margin-bottom: 32px;
 }
 .area .image-box .content .actions {
   display: -webkit-box;
@@ -1130,6 +1135,29 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.area .image-box .content .actions .ap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.area .image-box .content .actions .ap .unit {
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 24px;
+}
+.area .image-box .content .actions .ap .ut1,
+.area .image-box .content .actions .ap .ut2 {
+  opacity: 0;
+}
+.area .image-box .content .actions .ap .ut1.show,
+.area .image-box .content .actions .ap .ut2.show {
+  opacity: 1;
 }
 .area .image-box .content .actions .button {
   height: 55px;
@@ -1152,7 +1180,7 @@ body {
   font-size: 25px;
   color: #DCDCDC;
 }
-.area .image-box .content .actions .button:first-child {
+.area .image-box .content .actions .button.rotate {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -1163,9 +1191,17 @@ body {
 .area .image-box .content .actions .button:hover i {
   color: #77c7ff;
 }
+.area .image-box .content .u1,
+.area .image-box .content .u2 {
+  display: none;
+}
+.area .image-box .content .u1.show,
+.area .image-box .content .u2.show {
+  display: block;
+}
 
-.areaSwiper .swiper-button-prev,
-.areaSwiper .swiper-button-next {
+.areaSwipern .swiper-button-prev,
+.areaSwipern .swiper-button-next {
   display: none;
 }
 
@@ -1718,9 +1754,8 @@ body {
     white-space: nowrap;
     border-radius: 0 !important;
     height: 70px;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    border-bottom: 2px solid #B5B5B5;
+    -webkit-box-shadow: 0 4px 12px #eee;
+            box-shadow: 0 4px 12px #eee;
   }
   .tab-head .v2::before {
     display: none;
