@@ -24,6 +24,7 @@ body {
 }
 .navbar {
   padding: 30px 15px !important;
+  z-index: 2;
 }
 .navbar.bg-light {
   background-color: #fff !important;
@@ -968,6 +969,7 @@ body {
 }
 .team .item img {
   max-width: 277px;
+  border-radius: 50%;
 }
 .team .item h3 {
   font-size: 22px;
@@ -1019,7 +1021,7 @@ body {
   padding-top: 150px;
   color: #fff;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
 .hero-infra .title h1 {
   font-size: 55px;
@@ -1863,5 +1865,85 @@ body {
   .sec-heading p {
     font-size: 16px;
     line-height: 24px;
+  }
+}
+.awards {
+  background-color: #1472ba;
+  position: relative;
+}
+.awards .columns {
+  max-height: 800px;
+  overflow: hidden;
+}
+.awards .card {
+  background: #0e5487;
+  border-radius: 15px;
+  margin-bottom: 20px !important;
+}
+.awards .card .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+.awards .card .head img {
+  height: 150px;
+  width: 150px;
+  margin: 0 0 20px 0;
+  border-radius: 10px;
+}
+.awards .card .head h5 {
+  font-size: 22px;
+  line-height: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+.awards .card .head p {
+  font-size: 18px;
+  line-height: 27px;
+  color: #DCDCDC;
+  margin: 0 0 10px 0;
+}
+.awards .card p {
+  font-size: 18px;
+  line-height: 27px;
+  color: #DCDCDC;
+  margin: 10px 0 10px 0;
+}
+
+@media (max-width: 576px) {
+  .awards .columns {
+    overflow: auto;
+  }
+  .awards .card {
+    margin-bottom: 15px !important;
+  }
+  .awards .card .head img {
+    height: 70px;
+    width: 70px;
+    margin: 0 10px 0 0;
+    border-radius: 10px;
+  }
+  .awards .card .head h5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .awards .card .head p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .awards .card p {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
