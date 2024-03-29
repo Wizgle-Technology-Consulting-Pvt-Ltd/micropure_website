@@ -1840,10 +1840,10 @@ body {
 .awards {
     background-color: #1472ba;
     position: relative;
-    .columns {
-        max-height: 800px;
-        overflow: hidden;
-    }
+    // .columns {
+    //     max-height: 800px;
+    //     overflow: hidden;
+    // }
     .card {
         background: #0e5487;
         border-radius: 15px;
@@ -1861,10 +1861,12 @@ body {
                 border-radius: 10px;
             }
             h5 {
-                font-size: 22px;
-                line-height: 30px;
+                font-size: 16px;
+                line-height: 24px;
                 color: #fff;
                 font-weight: 700;
+                margin-bottom: 0 !important;
+                height: 50px;
             }
             p {
                 font-size: 18px;
@@ -1884,21 +1886,22 @@ body {
 
 @media (max-width: 576px) {
     .awards {
-        .columns {
-            overflow: auto;
-        }
+        // .columns {
+        //     overflow: auto;
+        // }
         .card {
             margin-bottom: 15px !important;
             .head {
                 img {
                     height: 70px;
                     width: 70px;
-                    margin: 0 10px 0 0;
+                    margin: 0 0px 20px 0;
                     border-radius: 10px;
                 }
                 h5 {
                     font-size: 16px;
                     line-height: 24px;
+                    margin-bottom: 0 !important;
                 }
                 p {
                     font-size: 14px;
