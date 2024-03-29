@@ -18,24 +18,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>MicroPure - Home</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light p-3">
+    <nav class="navbar navbar-expand-lg navbar-light  bg-light p-3 change  d-xl-block">
         <div class="container p-0">
             <a class="navbar-brand" href="index.html">
-                <img src="assests/micorpure_logo.svg">
+                <img src="assests/micorpure_logo.svg" id="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" onclick="openMobilePanel()">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-            <div class="collapse navbar-collapse  d-flex justify-content-between" id="navbarCollapse">
+            <div class="collapse navbar-collapse d-flex d-lg-flex  justify-content-between" id="navbarCollapse">
                 <ul class="navbar-nav">
-
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="panel-close d-lg-none" onclick="closeMobilePanel()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                          </svg>
+                    </li>
+                    <li class="nav-item ">
                         <a class="nav-link mr-3" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
@@ -48,24 +56,28 @@
                         <a class="nav-link mr-3" href="careers.html">Careers </a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="contact.html">Contact </a>
+                        <a class="nav-link btn btn-primary d-none d-lg-block" href="contact.html" style="color: #fff !important;">Contact </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link mr-3 " href="contact.html">Contact </a>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
+    <div class="curtain">
+    </div>
 
-    <div class="container mt-5 hero-banner">
+    <div class="container mt-0 mt-lg-4 hero-banner">
         <div class="row">
-            <div class="col-12 ">
+            <div class="col-12 img-container">
                 <div class="image">
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <h1 class="mt-4">
-                                Leading the way in pharmaceuticals contract manufacturing
+                                Leading the way in pharma contract manufacturing
                             </h1>
-                            <h5 class="mt-4">
+                            <h5 class="mt-4 pr-0 pr-lg-5">
                                 Brining innovation and reliability to the production of liquid injection and pre-filled syringes, we are dedicated to providing our client with high-quality products and unparalleled customer service
                             </h5>
                             <button class="btn btn-primary mt-5 py-3 px-4">
@@ -78,55 +90,125 @@
         </div>
     </div>
 
-    <div class="container mt-5 pb-5">
-        <div class="row">
+    <div class="container mt-5">
+        <div class="row client-scroller">
             <div class="col-12">
-                <div class="client-scroller">
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/Alkem_Laboratories_logo.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/cadila_pharmaceuticals_logo.png.webp">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/Caplin point.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/coral_logo.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/Ipca_Labs_logo.svg.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/Mapra.jpg">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/Mihika Pharma Logo.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/MVC.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/Reannon logo.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/RPGLIFE.NS_BIG-348b34b3.png">
-                    </a>
-                    <a href="javascript:void(0)">
-                        <img src="assests/clientLogo/Wockhardt-new-logo-big.jpg">
-                    </a>
+                <!-- <div class="swiper cSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/Alkem_Laboratories_logo.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/cadila_pharmaceuticals_logo.png.webp">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/Caplin point.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/coral_logo.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/Ipca_Labs_logo.svg.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/Mapra.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/Mihika Pharma Logo.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/MVC.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/Reannon logo.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/RPGLIFE.NS_BIG-348b34b3.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="assests/clientLogo/Wockhardt-new-logo-big.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div> -->
+                <!-- <script>
+                    var swiper = new Swiper(".cSwiper", {
+                        spaceBetween: 1,
+                        slidesPerView: 4,
+                        breakpoints: {
+                            320: {
+                                slidesPerView: 1,
+                                spaceBetween: 60
+                            },
+                            480: {
+                                slidesPerView: 4,
+                                spaceBetween: 90
+                            },
+                        },
+                        autoplay: {
+                            delay: 500,
+                        },
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                    });
+                </script> -->
+
+                <marquee behavior="scroll" direction="left" onmousedown="this.stop();" onmouseup="this.start();" scrollamount="15">
+                    <img src="assests/clientLogo/Alkem_Laboratories_logo.png">
+                    <img src="assests/clientLogo/cadila_pharmaceuticals_logo.png.webp">
+                    <img src="assests/clientLogo/Caplin point.png">
+                    <img src="assests/clientLogo/coral_logo.png">
+                    <img src="assests/clientLogo/Ipca_Labs_logo.svg.png">
+                    <img src="assests/clientLogo/Mapra.jpg">
+                    <img src="assests/clientLogo/Mihika Pharma Logo.png">
+                    <img src="assests/clientLogo/MVC.png">
+                    <img src="assests/clientLogo/Reannon logo.png">
+                    <img src="assests/clientLogo/RPGLIFE.NS_BIG-348b34b3.png">
+                    <img src="assests/clientLogo/Wockhardt-new-logo-big.jpg">
+                </marquee>
+
+                <div class="m-grad">
+
                 </div>
             </div>
         </div>
+
+
     </div>
 
-    <div class="expertise mt-5">
-        <div class="container">
-            <div class="row align-item-center">
-                <div class="col-5">
-                    <div class="left pr-5">
-                        <div>
-                            <h5>
+
+    <div class="expertise sec-spacing1">
+        <div class="container mt-5 mt-lg-0">
+            <div class="row align-item-center mt-5 mt-lg-0">
+                <div class="col-12 col-lg-5 mt-5 mt-lg-0">
+                    <div class="left pr-5 mt-5 mt-lg-0">
+                        <div class="mt-5 mt-lg-0">
+                            <h5 class="mt-5 mt-lg-0">
                                 Expertise and technology driving high-quality pharmaceutical solutions
                             </h5>
                             <p class="mt-3">
@@ -135,9 +217,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="row">
-                        <div class="col-6">
+                <div class="col-12 col-lg-7">
+                    <div class="row mt-5">
+                        <div class="col-12 col-lg-6">
                             <div class="card py-4 px-5">
                                 <img src="assests/iconsPics/Home/Icon_ Strategic location.svg">
                                 <h6>
@@ -157,8 +239,8 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-6 mt-5">
-                            <div class="card py-4 px-5 mt-5">
+                        <div class="col-12 col-lg-6 mt-lg-5">
+                            <div class="card py-4 px-5 mt-lg-5">
                                 <img src="assests/iconsPics/Home/Icon_ Cost-effective solution.svg">
                                 <h6>
                                     Cost-effective solution
@@ -185,7 +267,7 @@
         <div class="bottom"></div>
     </div>
 
-    <div class="container mt-5 pt-5">
+    <div class="container sec-spacing1">
         <div class="row">
             <div class="col-12">
                 <div class="sec-heading">
@@ -202,7 +284,7 @@
         </div>
 
         <div class="row quality mt-5 justify-content-center">
-            <div class="col-3 mb-4">
+            <div class="col-12 col-lg-3 mb-4">
                 <img src="assests/iconsPics/Home/Icon_ Customer focus.svg">
                 <h5>
                     Customer focus
@@ -211,7 +293,7 @@
                     Focusing on meeting and exceeding customer needs and expectations through personalized attention and services.
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-12 col-lg-3 mb-4">
                 <img src="assests/iconsPics/Home/Icon_ WHO & cGMP compliance.svg">
                 <h5>
                     WHO & cGMP compliance
@@ -220,7 +302,7 @@
                     Strict compliance to WHO & Current Good Manufacturing Practices regulations for highest quality products.
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-12 col-lg-3 mb-4">
                 <img src="assests/iconsPics/Home/Icon_ Commitment to progress.svg">
                 <h5>
                     Commitment to progress
@@ -229,7 +311,7 @@
                     Endeavor to optimize processes through ongoing evaluations and improvements to enhance quality and customer satisfaction.
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-12 col-lg-3 mb-4">
                 <img src="assests/iconsPics/Home/Icon_ Risk assessment.svg">
                 <h5>
                     Risk assessment
@@ -238,7 +320,7 @@
                     Proactive risk assessment and analysis to minimize product defects and improve quality control processes.
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-12 col-lg-3 mb-4">
                 <img src="assests/iconsPics/Home/Icon_ Auditing & verification.svg">
                 <h5>
                     Auditing & verification
@@ -247,7 +329,16 @@
                     Regular internal and external audits to monitor quality performance and identify areas for improvement.
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-12 col-lg-3 mb-4">
+                <img src="assests/iconsPics/Home/Icon_ Quality management system.svg">
+                <h5>
+                    Quality management
+                </h5>
+                <p>
+                    Adherence to a systematic approach for ensuring consistent quality through ongoing evaluations and improvements to meet customer requirements.
+                </p>
+            </div>
+            <div class="col-12 col-lg-3 mb-4">
                 <img src="assests/iconsPics/Home/Icon_ Employee training.svg">
                 <h5>
                     Employee training </h5>
@@ -255,21 +346,142 @@
                     Providing ongoing employee training to continually improve skills and knowledge to maintain high quality standards.
                 </p>
             </div>
-            <div class="col-3 mb-4">
-                <img src="assests/iconsPics/Home/Icon_ Quality management system.svg">
-                <h5>
-                    Quality management system
-                </h5>
-                <p>
-                    Adherence to a systematic approach for ensuring consistent quality through ongoing evaluations and improvements to meet customer requirements.
-                </p>
-            </div>
+
         </div>
     </div>
 
-    <div class="triangle-right"></div>
-    <div class="discover">
-        <div class="container mt-5 pt-5">
+
+    <div class="triangle-right sec-spacing1"></div>
+    <div class="awards ">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sec-heading white">
+                        <h3>
+                            Trusted by Leading Government Agencies
+                        </h3>
+                        <p class="mt-3" style="color: #fff;">
+                            At Micropure, we take pride in being the preferred choice for liquid injectable and pre-filled syringe manufacturing among renowned government agencies. Through our unwavering commitment to quality, innovation, and regulatory compliance, we have earned
+                            the trust of these esteemed institutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row columns mt-3 mt-lg-5">
+
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/tamil.png">
+                            <div>
+                                <h5>
+                                    Tamil Nadu
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/odisha.png">
+                            <div>
+                                <h5>
+                                    Odisha
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/rmsc.png">
+                            <div>
+                                <h5>
+                                    Rajasthan
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/telangana.png">
+                            <div>
+                                <h5>
+                                    Telangana
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/thiru.png">
+                            <div>
+                                <h5>
+                                    RCC Kerala
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/kerala.png">
+                            <div>
+                                <h5>
+                                    Kerala
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/bbpi.png">
+                            <div>
+                                <h5>
+                                    BBPI Central Government
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-4">
+                    <div class="card p-4">
+                        <div class="head d-flex">
+                            <img src="assests/gov/hll.png">
+                            <div>
+                                <h5>
+                                    An Indian Government Enterprise
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="discover ">
+        <div class="container pt-5">
             <div class="row">
                 <div class="col-12">
                     <div class="sec-heading white">
@@ -280,11 +492,11 @@
                 </div>
             </div>
 
-            <div class="row mt-5">
+            <div class="row columns mt-3 mt-lg-5">
 
-                <div class="col-4">
+                <div class="col-12 col-lg-4">
                     <div class="row">
-                        <div class="col-12 mb-4 ">
+                        <div class="col-12 mb-3 mb-lg-4">
                             <div class="card p-4">
                                 <div class="head d-flex">
                                     <img src="assests/Image 3.png">
@@ -302,7 +514,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-12 mb-4">
+                        <div class="col-12 mb-3 mb-lg-4">
                             <div class="card p-4">
                                 <div class="head d-flex">
                                     <img src="assests/Image 3.png">
@@ -321,7 +533,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-12 mb-4">
+                        <div class="col-12 mb-3 mb-lg-4">
                             <div class="card p-4">
                                 <div class="head d-flex">
                                     <img src="assests/Image 3.png">
@@ -343,7 +555,7 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-lg-4">
                     <div class="row">
                         <div class="col-12 mb-4 ">
                             <div class="card p-4">
@@ -364,7 +576,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-12 mb-4">
+                        <div class="col-12 mb-3 mb-lg-4">
                             <div class="card p-4">
                                 <div class="head d-flex">
                                     <img src="assests/Image 3.png">
@@ -384,9 +596,9 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-lg-4">
                     <div class="row">
-                        <div class="col-12 mb-4">
+                        <div class="col-12 mb-3 mb-lg-4">
                             <div class="card p-4">
                                 <div class="head d-flex">
                                     <img src="assests/Image 3.png">
@@ -404,7 +616,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-12 mb-4">
+                        <div class="col-12 mb-3 mb-lg-4">
                             <div class="card p-4">
                                 <div class="head d-flex">
                                     <img src="assests/Image 3.png">
@@ -421,7 +633,7 @@
                                     I highly recommend Micropure for anyone in the pharmaceutical industry, they never compromise on quality. </p>
                             </div>
                         </div>
-                        <div class="col-12 mb-4">
+                        <div class="col-12 mb-3 mb-lg-4">
                             <div class="card p-4">
                                 <div class="head d-flex">
                                     <img src="assests/Image 3.png">
@@ -444,12 +656,11 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 
-
-    <div class="container mt-5 pt-5 connect-with">
+    <div class="container sec-spacing1 connect-with ">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-5 mt-4">
                 <div class="sec-heading">
                     <h3>
                         Ready to connect with us?
@@ -457,38 +668,40 @@
                     <p class="mt-3">
                         Partner with us for a seamless pharmaceutical contract manufacturing experience. Our dedicated team is always available to answer your questions and address your concerns.
                     </p>
-                    <button class="btn btn-primary mt-5 py-3 px-4">
-                        Contact Us
+                    <button class="btn btn-primary mt-4 py-3 px-4">
+                        <a href="contact.html" style="color: #fff !important; text-decoration: none;">Contact Us</a>
                     </button>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card p-4 px-5">
+            <div class="col-12 col-lg-7 mt-5 mt-lg-0">
+                <div class="card p-4 p-lg-4 px-4 px-lg-5">
                     <h6>
                         Discover our products
                     </h6>
 
                     <div class="row mt-3 products">
-                        <div class="col-6 mb-4">
+                        <div class="col-12 col-lg-6 mb-4 pr-0">
                             <div class="item">
                                 <img src="assests/iconsPics/Icon_ Injectibles.svg">
-                                <h5>
+                                <h5 class="mt-2">
                                     Injectables
                                 </h5>
                                 <p>
                                     Discover our wide range of high-quality injectables, manufactured with precision and attention to detail.
                                 </p>
+                                <a href="">Explore >></a>
                             </div>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-12 col-lg-6 mb-4 pr-0">
                             <div class="item">
                                 <img src="assests/iconsPics/Icon_ Pre-filled syringes.svg">
-                                <h5>
+                                <h5 class="mt-2">
                                     Pre-filled syringes
                                 </h5>
                                 <p>
                                     As a fast growing unit dose option, pre-filled syringes enhance healthcare with convenience, safety and cost-effectiveness.
                                 </p>
+                                <a href="">Explore >></a>
                             </div>
                         </div>
                     </div>
@@ -498,28 +711,19 @@
 
     </div>
 
-
-    <div class="py-5"></div>
-    <div class="footer  mt-5">
+    <div class="footer sec-spacing1">
         <div class="container py-3">
-            <div class="row align-item-center">
-                <div class="col-4">
-                    <img src="assests/micorpure_logo_white.svg">
-                </div>
-                <div class="col-4 social">
-                    <div class="icon">
-                        <i class="fa-brands fa-twitter"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
+            <div class="row align-item-center justify-content-between">
+                <div class="col-12 col-md-6 logo">
+                    <div class="logo">
+                        <img src="assests/micorpure_logo_white.svg">
 
+                    </div>
                 </div>
-                <div class="col-4 copy">
-                    © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                <div class="col-12 col-md-6 copy">
+                    <div class="copy">
+                        © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                    </div>
                 </div>
             </div>
         </div>
@@ -530,6 +734,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="main.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
