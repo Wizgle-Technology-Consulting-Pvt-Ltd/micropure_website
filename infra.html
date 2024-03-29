@@ -17,27 +17,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" /> // Add the new slick-theme.css if you want the default styling
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
 
     <title>MicroPure - Infrastructure</title>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light p-3 change transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 change transparent d-xl-block">
         <div class="container p-0">
             <a class="navbar-brand" href="index.html">
                 <img src="assests/micorpure_logo_white.svg" id="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" onclick="openMobilePanel()">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-            <div class="collapse navbar-collapse  d-flex justify-content-between" id="navbarCollapse">
+            <div class="collapse navbar-collapse d-flex d-lg-flex  justify-content-between" id="navbarCollapse">
                 <ul class="navbar-nav">
-
                 </ul>
                 <ul class="navbar-nav">
+                    <li class="panel-close d-lg-none" onclick="closeMobilePanel()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                          </svg>
+                    </li>
                     <li class="nav-item ">
                         <a class="nav-link mr-3" href="about.html">About</a>
                     </li>
@@ -51,13 +57,17 @@
                         <a class="nav-link mr-3" href="careers.html">Careers </a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="contact.html">Contact </a>
+                        <a class="nav-link btn btn-primary d-none d-lg-block" href="contact.html">Contact </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3 d-lg-none" href="contact.html">Contact </a>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
+    <div class="curtain">
+    </div>
 
     <div class="hero-infra">
         <div class="bottom"></div>
@@ -67,13 +77,12 @@
                     <h1 class="mt-4 text-center">
                         Discover our world-class infrastructure and manufacturing capabilities
                     </h1>
-                    <h6 class="mt-4 text-center">
+                    <h5 class="mt-4 text-center">
                         Explore our state-of-the-art facilities and advanced technologies that power our liquid injectable and pre-filled syringe production.
-                    </h6>
+                    </h5>
                     <div class="row justify-content-center mt-5 pt-3">
                         <div class="col-8 d-flex justify-content-center">
                             <div class="video">
-
                                 <div class="buttons">
                                     <div class="play" onclick="playVid()" id="play">
                                         <i class="fa-solid fa-play"></i>
@@ -113,8 +122,7 @@
         </div>
     </div>
 
-    <div class="py-4"></div>
-    <div class="container mt-5 pt-5">
+    <div class="container sec-spacing1">
         <div class="row">
             <div class="col-12">
                 <div class="sec-heading">
@@ -130,7 +138,8 @@
         </div>
 
         <div class="row area mt-5 justify-content-center">
-            <div class="col-3 mb-4">
+
+            <div class="col-6 col-lg-3 mb-4">
                 <h5>
                     2.25 sq. ha.
                 </h5>
@@ -138,7 +147,7 @@
                     Total area of the site
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-6 col-lg-3 mb-4">
                 <h5>
                     60 Mn
                 </h5>
@@ -146,7 +155,7 @@
                     Manufacturing capacity for vials per annum
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-6 col-lg-3 mb-4">
                 <h5>
                     60 Mn
                 </h5>
@@ -154,7 +163,7 @@
                     Manufacturing capacity for ampoules per annum
                 </p>
             </div>
-            <div class="col-3 mb-4">
+            <div class="col-6 col-lg-3 mb-4">
                 <h5>
                     15 Mn
                 </h5>
@@ -162,37 +171,132 @@
                     Manufacturing capacity for PFS per annum
                 </p>
             </div>
-            <div class="col-12 image-box mt-3">
-                <div class="image">
-                    <img src="assests/iconsPics/Infra/Unit 1.png">
-                </div>
-                <div class="content p-5">
-                    <h1> Unit 1</h1>
-                    <p>
-                        The home of high-quality liquid injectable vials
-                    </p>
 
-                    <div class="actions">
-                        <div class="button">
-                            <i class="fa-solid fa-play"></i>
+
+            <div class="col-12 image-box mt-3 ">
+                <div class="image">
+
+                    <div class="swiper areaSwipern">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assests/iconsPics/Infra/Unit 1.png">
+
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assests/iconsPics/Infra/Unit 1.png">
+
+                            </div>
                         </div>
-                        <div class="button">
-                            <i class="fa-solid fa-play"></i>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+
+                    <script>
+                        var swiper = new Swiper(".areaSwipern", {
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+
+                        function sNext() {
+                            const swiperFunctions = document.querySelector('.areaSwipern').swiper;
+                            swiperFunctions.slideNext();
+
+                            document.querySelector(".u1").classList.remove("show");
+                            document.querySelector(".u2").classList.add("show");
+
+
+                        }
+
+                        function sPrev() {
+                            const swiperFunctions = document.querySelector('.areaSwipern').swiper;
+                            swiperFunctions.slidePrev();
+
+                            document.querySelector(".u2").classList.remove("show");
+                            document.querySelector(".u1").classList.add("show");
+
+
+
+                        }
+                    </script>
+
+                </div>
+                <div class="content">
+                    <div class="u1 show">
+                        <h1> Unit I</h1>
+                        <p>
+                            The home of high-quality liquid injectable vials
+                        </p>
+
+                        <div class="actions d-none d-lg-flex">
+
+                            <div class="ap">
+                                <div class="unit ut1">
+                                    Unit I
+                                </div>
+                                <div class="button rotate" id="sleft" onclick="sPrev()">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="ap">
+                                <div class="button " id="sright" onclick="sNext()">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div class="unit ut2 show">
+                                    Unit II
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u2">
+                        <h1> Unit II</h1>
+                        <p>
+                            Manufacturing liquid injectable ampoules and pre-filled syringes
+                        </p>
+
+                        <div class="actions d-none d-lg-flex">
+
+                            <div class="ap">
+                                <div class="unit ut1 show">
+                                    Unit I
+                                </div>
+                                <div class="button rotate" id="sleft" onclick="sPrev()">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="ap">
+                                <div class="button ut2" id="sright" onclick="sNext()">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div class="unit ut2">
+                                    Unit II
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="actions-m d-lg-none">
+                <div class="button" id="sleft" onclick="sPrev()">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="button" id="sright" onclick="sNext()">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+
         </div>
+
     </div>
 
 
-
-    <div class="inhouse">
+    <div class="inhouse sec-spacing1">
         <div class="top"></div>
         <div class="py-5"></div>
-        <div class="container my-5 py-5">
+        <div class="container my-3 my-lg-5 py-3 py-lg-3">
             <div class="row justify-content-end">
-                <div class="col-12">
+                <div class="col-12 mt-5">
                     <div class="sec-heading">
                         <h3>
                             In-house QC & Microbiology lab
@@ -207,11 +311,95 @@
             </div>
 
         </div>
+        <!-- Swiper -->
+        <div class="swiper labSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 1.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 2.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 3.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 4.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 5.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 6.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 7.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1 – 8.png">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image" style="background-image: url('');">
+                        <img src="/assests/lab/a1.png">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".labSwiper", {
+                spaceBetween: 1,
+                slidesPerView: 2,
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+
+                },
+                autoplay: {
+                    delay: 2000,
+                },
+                centeredSlides: true,
+                roundLengths: true,
+                loop: true,
+                loopAdditionalSlides: 30,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
     </div>
 
-    <div class="container mt-5 pt-5 connect-with">
+    <div class="container sec-spacing1 connect-with ">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-5 mt-4">
                 <div class="sec-heading">
                     <h3>
                         Ready to connect with us?
@@ -219,38 +407,40 @@
                     <p class="mt-3">
                         Partner with us for a seamless pharmaceutical contract manufacturing experience. Our dedicated team is always available to answer your questions and address your concerns.
                     </p>
-                    <button class="btn btn-primary mt-5 py-3 px-4">
-                        Contact Us
+                    <button class="btn btn-primary mt-4 py-3 px-4">
+                        <a href="contact.html" style="color: #fff !important; text-decoration: none;">Contact Us</a>
                     </button>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card p-4 px-5">
+            <div class="col-12 col-lg-7 mt-5 mt-lg-0">
+                <div class="card p-4 p-lg-4 px-4 px-lg-5">
                     <h6>
                         Discover our products
                     </h6>
 
                     <div class="row mt-3 products">
-                        <div class="col-6 mb-4">
+                        <div class="col-12 col-lg-6 mb-4 pr-0">
                             <div class="item">
                                 <img src="assests/iconsPics/Icon_ Injectibles.svg">
-                                <h5>
+                                <h5 class="mt-2">
                                     Injectables
                                 </h5>
                                 <p>
                                     Discover our wide range of high-quality injectables, manufactured with precision and attention to detail.
                                 </p>
+                                <a href="">Explore >></a>
                             </div>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-12 col-lg-6 mb-4 pr-0">
                             <div class="item">
                                 <img src="assests/iconsPics/Icon_ Pre-filled syringes.svg">
-                                <h5>
+                                <h5 class="mt-2">
                                     Pre-filled syringes
                                 </h5>
                                 <p>
                                     As a fast growing unit dose option, pre-filled syringes enhance healthcare with convenience, safety and cost-effectiveness.
                                 </p>
+                                <a href="">Explore >></a>
                             </div>
                         </div>
                     </div>
@@ -260,31 +450,24 @@
 
     </div>
 
-    <div class="py-5"></div>
-    <div class="footer mt-5">
+    <div class="footer sec-spacing1">
         <div class="container py-3">
-            <div class="row align-item-center">
-                <div class="col-4">
-                    <img src="assests/micorpure_logo_white.svg">
-                </div>
-                <div class="col-4 social">
-                    <div class="icon">
-                        <i class="fa-brands fa-twitter"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
+            <div class="row align-item-center justify-content-between">
+                <div class="col-12 col-md-6 logo">
+                    <div class="logo">
+                        <img src="assests/micorpure_logo_white.svg">
 
+                    </div>
                 </div>
-                <div class="col-4 copy">
-                    © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                <div class="col-12 col-md-6 copy">
+                    <div class="copy">
+                        © 2023 Micropure Parenterals Pvt. Ltd. All rights reserved
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 
